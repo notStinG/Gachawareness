@@ -3,62 +3,95 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>KidsPlaySafer</title>
+        <title>Gambling Behaviour - KidsPlaySafer</title>
         <style>
             body {
-                background-color: blueviolet;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: white;
+                margin: 0;
                 font-family: "Calibri", sans-serif;
+                color: black;
                 text-align: center;
+                background-color: #6b5b95;
+                min-height: 100vh;
+                padding: 20px;
             }
 
-            .container {
+            header {
+                background-color: #4b0082;
+                color: white;
+                padding: 20px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
                 display: flex;
-                justify-content: center;
-                margin-top: 20px;
-            }
-
-            .box {
-                border: 2px solid black;
-                border-radius: 15px;
-                width: 150px;
-                height: 150px;
-                margin: 0 20px;
-                display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                font-size: 24px;
-                font-weight: bold;
             }
 
-            
+            h1 {
+                font-size: 2.5em;
+                margin: 0;
+            }
+
+            .back-link {
+                text-decoration: none;
+                color: white;
+                background-color: #ff8c00;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 1em;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .back-link:hover {
+                background-color: #ffa500;
+                transform: scale(1.05);
+            }
+
+            .content {
+                background-color: orange;
+                border-radius: 15px;
+                padding: 30px;
+                max-width: 800px;
+                margin: 40px auto;
+                font-weight: 800;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            h3 {
+                font-size: 2em;
+                margin: 0;
+                padding-bottom: 10px;
+                position: relative;
+            }
+
+            h3::after {
+                content: "";
+                display: block;
+                width: 50%;
+                height: 2px;
+                background-color: black;
+                margin: 10px auto 0;
+            }
+
+            p {
+                font-size: 1.4em;
+                line-height: 1.6;
+                text-align: justify;
+            }
         </style>
     </head>
     <body>
         <header>
             <h1>KidsPlaySafer</h1>
-            <h3>The negative effects on gacha games</h3>
+            <a href="{{ url_for('index') }}" class="back-link">Back Home</a>
         </header>
-        <br><br>
-        <div class="container">
-            <div class="box" id="gambling-behaviour">
-            <form action="{{ url_for('gambling-behaviour') }}" method="GET">
-                <button type="submit" class="link-button">Read More -></button>
-            </form>
-            </div>
-            <div class="box" id="financial-exploitations">
-            <form action="{{ url_for('financial-exploitations') }}" method="GET">
-                <button type="submit" class="link-button">Read More -></button>
-            </form>
-            </div>
-            <div class="box" id="mental-health">
-            <form action="{{ url_for('mental-health') }}" method="GET">
-                <button type="submit" class="link-button">Read More -></button>
-            </form>
-            </div>
+        <div class="content">
+            <h3>Negative Impact on Mental Health and Well-being</h3>
+            <p>
+                The randomized rewards and competition in gacha games can contribute to anxiety, frustration, and low self-esteem, especially for younger players who might feel pressured to keep up with peers. Children may also experience a "fear of missing out" (FOMO) on limited-time items, leading to excessive screen time and neglect of schoolwork, physical activities, and social interactions. 
+            </p>
+            <p>
+                In Singapore, where academic performance and societal pressures are high, these games can exacerbate stress and distract from important developmental activities.
+            </p>
         </div>
     </body>
 </html>
