@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KidsPlaySafer</title>
+        <style>
+            body {
+                background-color: blueviolet;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: white;
+                font-family: "Calibri", sans-serif;
+                text-align: center;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .box {
+                border: 2px solid black;
+                border-radius: 15px;
+                width: 150px;
+                height: 150px;
+                margin: 0 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>KidsPlaySafer</h1>
+            <h3>The negative effects on gacha games</h3>
+        </header>
+        <br><br>
+        <div class="container">
+            <div class="box" id="gambling-behaviour">
+            <form action="{{ url_for('gambling-behaviour') }}" method="GET">
+                <button type="submit" class="link-button">Feed</button>
+            </form>
+            </div>
+            <div class="box" id="financial-exploitations">
+            <form action="{{ url_for('financial-exploitations') }}" method="GET">
+                <button type="submit" class="link-button">Add Workout Post</button>
+            </form>
+            </div>
+            <div class="box" id="mental-health">
+            <form action="{{ url_for('mental-health') }}" method="GET">
+                <button type="submit" class="link-button">Kitchen</button>
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
