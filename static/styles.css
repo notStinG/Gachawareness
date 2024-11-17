@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'Audiowide';
+    src: url('fonts/Audiowide-Regular.ttf') format('truetype');
+}
+
 body {
     margin: 0;
-    font-family: "Calibri", sans-serif;
+    font-family: "DejaVu Sans", sans-serif;
     color: black;
     text-align: center;
     background-color: #6b5b95;
@@ -45,18 +50,25 @@ h1 {
     padding: 30px;
     max-width: 800px;
     margin: 40px auto;
-    font-weight: 800;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
+.content p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    text-align: justify;
+    font-weight: normal;
+}
+
+.content h3 {
+    font-weight: bold;
     font-size: 2em;
     margin: 0;
     padding-bottom: 10px;
     position: relative;
 }
 
-h3::after {
+.content h3::after {
     content: "";
     display: block;
     width: 50%;
@@ -84,14 +96,16 @@ p {
     animation: gradientAnimation 15s ease infinite;
 }
 
-.container {
+.boxes-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 20px; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .box {
@@ -99,20 +113,56 @@ p {
     border-radius: 15px;
     background-color: rgba(255, 165, 0, 0.9);
     color: black;
-    width: fit-content;
+    width: 300px;
+    min-height: 300px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "DejaVu Sans", sans-serif;
 }
 
 .box:hover {
     transform: translateY(-20px);
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+}
+
+.box h3 {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 2em;
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.box h3::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: black;
+    margin: 10px auto 0;
+}
+
+.box p {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: normal;
+}
+
+.read-more {
+    font-family: "DejaVu Sans", sans-serif;
+    text-decoration: underline;
+    color: black;
+    margin-top: 10px;
 }
 
 .link-button {
@@ -130,4 +180,62 @@ p.centered {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.2em;
+}
+
+@media screen and (max-width: 1000px) {
+    .boxes-container {
+        flex-direction: column;
+    }
+    
+    .box {
+        width: 80%;
+        min-height: auto;
+    }
+}
+
+.logo-text {
+    font-family: 'Audiowide', "DejaVu Sans", sans-serif;
+    font-size: 2em;         /* Adjust size as needed */
+    color: white;
+    text-transform: uppercase;
+}
+
+.resources-section {
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(255, 165, 0, 0.9);
+    color: black;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.resources-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.resources-section p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.resources-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources-section li {
+    margin-bottom: 10px;
+}
+
+.resources-section a {
+    text-decoration: underline;
+    color: #4b0082;
+}
+
+.resources-section a:hover {
+    color: #ff8c00;
 }
